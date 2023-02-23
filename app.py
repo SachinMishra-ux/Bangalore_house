@@ -2,6 +2,12 @@ import streamlit as st
 import numpy as np
 import pickle
 import json
+import streamlit as st
+from PIL import Image
+
+image = Image.open('./background.png')
+
+st.image(image, caption='Bangalore House Price')
 path= "./columns.json"
 f1 = open(path)
 data = json.load(f1)
@@ -76,3 +82,6 @@ if st.button('Estimate Price'):
     #model.predict([[area_type,location,total_sqft, bath, bhk]][0])
 else:
     st.write('Goodbye')
+
+
+
